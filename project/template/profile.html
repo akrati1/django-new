@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% include 'nav_bar.html' %}
+<div style="margin-top:80px; width:900px; margin:80px auto;">
+    <form method="POST" enctype="multipart/form-data">
+         {% csrf_token %}
+         {{ form|crispy }}
+     <input type="submit" value="save">
+    </form>
+</div>
+<p> this is profile page. </p>
+{% endblock content %}

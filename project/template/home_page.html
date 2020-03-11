@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %} post yous thoughts {% endblock title %}
+{% block content %}
+{% include 'nav_bar.html' %}
+    <p>hello everyone </p>
+<h1>For recent post </h1>
+{% for post in post %}
+<div>
+    <p style="border:1px solid blue">
+    <h3>{{ post.post_title }}</h3>
+    <p> {{ post.date_published }}</p>
+    <p style="border:1px solid black;margin:25px 50px ;background-color:lightblue;">
+        {{ post.post_content }}
+    </p>
+    <p>posted by {{ post.user_name }}</p>
+    <p>suggsted link {{ post.user_profile_link }}</p>
+    </p>
+</div>
+{% endfor %}
+{% endblock content %}
